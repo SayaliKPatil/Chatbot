@@ -3,13 +3,14 @@ const ConversationV1 = require('watson-developer-cloud/conversation/v1');
 const express = require('express');
 const redis = require('redis');
 let client = redis.createClient();
+const secrets = require('./secrets');
 
-const twilioAccountSID = 'AC36c528b4b65e3f70141efa402eef1f4a';
-const twilioAuthToken = 'dce923b09bf7ed4960263bd0333b1bce';
+const twilioAccountSID = process.env.twilioAccountSID;
+const twilioAuthToken = process.env.twilioAuthToken;
 const twilio = require('twilio')(twilioAccountSID, twilioAuthToken);
-const watsonWorkSpaceId = '2d77884d-12e2-4f5a-89bf-8a24d6841d92';
-const watsonServiceUsername = '20008faa-4c8a-4d73-9e8f-4609d186f2e0';
-const watsonServicePassword = 'LkNofbXFmgXW';
+const watsonWorkSpaceId = process.env.watsonWorkSpaceId;
+const watsonServiceUsername = process.env.watsonServiceUsername;
+const watsonServicePassword = process.env.watsonServicePassword;
 
 const app = express();
 

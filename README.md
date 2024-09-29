@@ -1,4 +1,4 @@
-# Kaibot
+# Chatbot
 
 ## A text message based chatbot built to make conversation and take ice cream orders
 
